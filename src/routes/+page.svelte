@@ -31,6 +31,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Svelte Counter</title>
+	<meta name="description" content="Svelte Counter" />
+</svelte:head>
+
 <div class="flex-col w-[300px]">
 	<h1
 		class="flex justify-center items-center bg-yellow-300 text-center mb-4 h-[40px] font-bold"

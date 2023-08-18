@@ -29,7 +29,9 @@ pnpm preview
 
 ## Deploying
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.  
+> This project uses Github Pages to deploy. So, install `@sveltejs/adapter-static`.  
+> /static/`.nojekyll` file is required. If it is dismissed, you can't access \_app directory.
 
 ```bash
 pnpm run deploy

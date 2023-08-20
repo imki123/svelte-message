@@ -1,9 +1,14 @@
 <script lang="ts">
-	let a = 0;
-	let isMouseHolding = false;
-	let intervalId: any;
+	let count = 0;
+	let intervalId: ReturnType<typeof setInterval>;
 
-	function startHold(e: MouseEvent & { target: any }) {
+	function startHold(
+		e: MouseEvent & {
+			currentTarget: EventTarget & HTMLDivElement;
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			target: any;
+		}
+	) {
 		const buttonText = e.target.innerText;
 		holdingEvent(buttonText);
 	}
@@ -12,20 +17,19 @@
 	}
 	function holdingEvent(buttonText: string, ms = 100) {
 		let holdingTime = 11;
-		let doubleIntervalId;
 		if (buttonText === '+') {
-			a++;
+			count++;
 		} else if (buttonText === '-') {
-			a--;
+			count--;
 		} else if (buttonText === 'clear') {
-			a = 0;
+			count = 0;
 		}
 		intervalId = setInterval(() => {
 			holdingTime += 1;
 			if (buttonText === '+') {
-				a += Math.floor(holdingTime / 10);
+				count += Math.floor(holdingTime / 10);
 			} else if (buttonText === '-') {
-				a -= Math.floor(holdingTime / 10);
+				count -= Math.floor(holdingTime / 10);
 			}
 		}, ms);
 	}
@@ -40,7 +44,7 @@
 	<h1
 		class="flex justify-center items-center bg-yellow-300 text-center mb-4 h-[40px] font-bold"
 	>
-		{a}
+		{count}
 	</h1>
 	<div
 		class="flex justify-between gap-4"

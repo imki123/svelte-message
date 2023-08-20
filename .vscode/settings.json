@@ -1,9 +1,5 @@
 {
 	"css.customData": [".vscode/tailwind.json"],
 	"editor.rulers": [80],
-	"eslint.validate": [
-		{ "language": "javascript", "autoFix": true },
-		{ "language": "javascriptreact", "autoFix": true },
-		{ "language": "svelte", "autoFix": true }
-	]
+	"eslint.validate": ["javascript", "javascriptreact", "svelte"]
 }
